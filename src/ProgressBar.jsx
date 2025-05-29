@@ -1,6 +1,15 @@
 import React from 'react'
 
-const ProgressBar = () => {
+const ProgressBar = ({ currentTime, duration, onSeek }) => {
+  const handleClick = (e) => {
+    const rect = e.target.getBoundingClientRect();
+    const offsetX = e.clientX - rect.left;
+    const newTime = (offsetX / rect.width) * duration;
+    onSeek(newTime);
+  };
+
+  const progress = (currentTime / duration) * 100;
+  
   
 
   const containerStyle = {
@@ -14,16 +23,17 @@ const ProgressBar = () => {
   };
 
   const barStyle = {
-    
+    width: `${progress}%`,
     backgroundColor:'#FF6347',
     height: '100%',
     color: 'white',
     textAlign: 'center',
     lineHeight: '10px',
+    transition: "width 0.2s ease",
   };
 
   return (
-    <div style={containerStyle}>
+    <div style={containerStyle} onClick={handleClick}>
       <div style={barStyle}>
         
       </div>
@@ -31,4 +41,4 @@ const ProgressBar = () => {
   );
 };
 
-export default ProgressBar
+export default ProgressBar;
