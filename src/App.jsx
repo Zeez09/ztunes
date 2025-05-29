@@ -5,7 +5,7 @@ import gradient2 from "./assets/images/gradient-bg.jpg"
 
 import ProgressBar from "./ProgressBar"
 import playback from "./assets/images/Stop_and_play_fill-1.svg"
-import play from "./assets/images/play_fill.svg"
+import play from "./assets/images/Play_fill.svg"
 import forward from "./assets/images/Stop_and_play_fill.svg"
 import songs from "./data/Songs"
 import pause from "./assets/images/icons8-pause-30.png"
